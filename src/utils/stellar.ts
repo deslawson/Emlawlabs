@@ -149,10 +149,17 @@ export async function submitPayment(params: {
   network: 'mainnet' | 'testnet'
 }): Promise<string> {
   // Dynamically import Stellar SDK to keep initial bundle light
+<<<<<<< HEAD
   const { Keypair, Networks, TransactionBuilder, BASE_FEE, Asset, Operation, Memo, Horizon } =
     await import('@stellar/stellar-sdk')
 
   const server = new Horizon.Server(getHorizonUrl(params.network))
+=======
+  const { Keypair, Networks, TransactionBuilder, BASE_FEE, Asset, Operation, Memo, Server } =
+    await import('@stellar/stellar-sdk')
+
+  const server = new Server(getHorizonUrl(params.network))
+>>>>>>> 26eae3805336da76903e391c12eeb48f7872e45a
   const keypair = Keypair.fromSecret(params.secretKey)
   const account = await server.loadAccount(keypair.publicKey())
 
