@@ -1,9 +1,5 @@
 import './styles/main.css'
-<<<<<<< HEAD
 import type { AppState, Toast } from './types'
-=======
-import type { AppState, SendForm, Toast } from './types'
->>>>>>> 26eae3805336da76903e391c12eeb48f7872e45a
 import {
   fetchAccountInfo,
   isValidPublicKey,
